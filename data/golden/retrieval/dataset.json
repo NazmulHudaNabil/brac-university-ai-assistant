@@ -1,0 +1,82 @@
+[
+  {
+    "query": "In what year was BRAC University established, and who founded it?",
+    "expected_output": "BRAC University was established in 2001 and founded by Sir Fazle Hasan Abed."
+  },
+  {
+    "query": "Who is the current Vice-Chancellor of BRAC University?",
+    "expected_output": "The Vice-Chancellor of BRAC University is Syed Ferhat Anwar."
+  },
+  {
+    "query": "Who serves as the Chancellor of BRAC University?",
+    "expected_output": "The President of Bangladesh, Mohammed Shahabuddin, serves as the Chancellor of BRAC University."
+  },
+  {
+    "query": "How many schools and departments does BRAC University currently have?",
+    "expected_output": "BRAC University currently has 10 schools and 8 departments."
+  },
+  {
+    "query": "How many institutes and centres are hosted at BRAC University?",
+    "expected_output": "BRAC University hosts 3 institutes and 4 centres."
+  },
+  {
+    "query": "What programs does BRAC Business School (BBS) offer?",
+    "expected_output": "BRAC Business School offers an undergraduate Bachelor of Business Administration (BBA) program, and two graduate programs: a Master of Business Administration (MBA) and an Executive Master of Business Administration (EMBA)."
+  },
+  {
+    "query": "When was the Department of Mathematics and Physical Sciences (MPS) formed, and what is its origin?",
+    "expected_output": "The Department of Mathematics and Physical Sciences started on January 1, 2026, evolving from the Department of Mathematics and Natural Sciences, which was established in 2001 alongside the university."
+  },
+  {
+    "query": "When was the BRAC James P Grant School of Public Health founded and why?",
+    "expected_output": "It was founded in 2004 in Dhaka to address unmet public health challenges specific to Asia, Africa, and South America."
+  },
+  {
+    "query": "What GPA is required for O-Level and A-Level applicants to undergraduate programs?",
+    "expected_output": "A minimum GPA of 2.5 is required in both O-Level and A-Level, counting the best 5 O-Level subjects and best 2 A-Level subjects, graded on BRAC University's own scale (A=5, B=4, C=3, D=2), with E grades not counted."
+  },
+  {
+    "query": "Are GED qualifications accepted for undergraduate admission?",
+    "expected_output": "No, applicants with only Foundation or GED qualifications are not eligible for admission to undergraduate programs."
+  },
+  {
+    "query": "How long a break in studies is acceptable for undergraduate admission applicants?",
+    "expected_output": "Candidates with a break in studies of up to three years are accepted; exceptional cases beyond three years require emailing for review and approval by the Chair of the Admissions Committee."
+  },
+  {
+    "query": "Do international applicants have an application deadline?",
+    "expected_output": "No, BRAC University offers three semesters per year (Spring, Summer, and Fall), and international students can apply at any time during the year with no application deadline."
+  },
+  {
+    "query": "What courses might a freshman have to take based on admission test results?",
+    "expected_output": "Depending on admission test results, a freshman may be required to take one or more of: ENG 101, ENG 102 (credit courses), or ENG 091, MAT 091, MAT 092 (non-credit courses)."
+  },
+  {
+    "query": "When do students attend the mandatory Residential Semester, and how much does it cost?",
+    "expected_output": "All students attend the Residential Semester at the Savar campus in their 2nd semester, except Architecture students who attend in their 3rd semester. It costs Tk. 50,000 for the 4-month program, subject to increase with prior notice."
+  },
+  {
+    "query": "What percentage tuition waiver do domestic freshmen receive based on their prior academic results?",
+    "expected_output": "A 25% tuition fee waiver is awarded to students admitted to undergraduate programs in their first semester, based on their performance in SSC/O-Level, HSC/A-Level, or International Baccalaureate (IB) Diploma results."
+  },
+  {
+    "query": "What CGPA and credit completion are required to be eligible for the Merit Scholarship?",
+    "expected_output": "Students must complete at least 30 credits and maintain a CGPA of 3.7 to be eligible for the Merit Scholarship, which can range from 10% up to 100% based on academic performance."
+  },
+  {
+    "query": "What does the BRAC Scholarship (need-based) cover for international students?",
+    "expected_output": "The BRAC Scholarship offers a 100% waiver on tuition and other fees (semester fees, lab fees, library, etc.) plus food and accommodation, for economically disadvantaged but meritorious students, requiring a minimum CGPA of 3.00 to be maintained in all semesters."
+  },
+  {
+    "query": "What three offices make up BRAC University's Office of Student Affairs (OSA)?",
+    "expected_output": "The Office of Student Affairs comprises the Office of Academic Advising (OAA), the Office of Co-curricular Activities (OCA), and the Office of Career Services and Alumni Relations (OCSAR)."
+  },
+  {
+    "query": "What is the Professional Skills Development Program (PSDP)?",
+    "expected_output": "PSDP is an intensive course for final-year students designed around the soft skills employers value most and changing workplace practices, helping prepare students for the world of work."
+  },
+  {
+    "query": "What are OCSAR's office hours?",
+    "expected_output": "OCSAR's office hours are 9:00 am to 5:00 pm, Sunday through Thursday, except holidays."
+  }
+]

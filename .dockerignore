@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+.git/
+.gitignore
+Readme.md
+evals/
+tests/
+data/raw/
+data/cleaned/
+processed_data/
+.deepeval/
+.sessions/
+test.txt

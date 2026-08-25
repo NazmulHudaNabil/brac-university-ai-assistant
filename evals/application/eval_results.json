@@ -1,0 +1,70 @@
+{
+  "summary": {
+    "total_cases": 5,
+    "avg_correctness": 0.86,
+    "avg_completeness": 1.0,
+    "citations_pass_rate": 100.0
+  },
+  "results": [
+    {
+      "id": "e2e_01",
+      "question": "Are GED qualifications accepted for undergraduate admission at BRAC University?",
+      "actual_output": "No.\u202fBRAC University does not accept Foundation or GED qualifications for admission to its undergraduate programs. Candidates who have only completed a GED (or similar foundation courses) are not eligible for undergraduate admission.",
+      "expected_output": "No, applicants with only Foundation or GED qualifications are not eligible for admission to undergraduate programs at BRAC University.",
+      "correctness_score": 1.0,
+      "correctness_reason": "The actual response correctly states that BRAC University does not accept Foundation or GED qualifications for undergraduate admission, matching the expected answer exactly with no extra or contradictory claims.",
+      "completeness_score": 1.0,
+      "completeness_reason": "The response fully matches the expected answer: it states 'No', identifies BRAC University, specifies that Foundation or GED qualifications are not accepted, and confirms that candidates with only those qualifications are ineligible for undergraduate admission. No required element is missing or incomplete.",
+      "citations_count": 8,
+      "citations_pass": true
+    },
+    {
+      "id": "e2e_02",
+      "question": "In what year was BRAC University established, and who founded it?",
+      "actual_output": "BRAC University was **established in 2001**, and it was **founded by Sir\u202fFazle\u202fHasan\u202fAbed**.",
+      "expected_output": "BRAC University was established in 2001 and was founded by Sir Fazle Hasan Abed.",
+      "correctness_score": 1.0,
+      "correctness_reason": "The actual output correctly states that BRAC University was established in 2001 and was founded by Sir Fazle Hasan Abed, matching the expected output exactly with no factual errors or extraneous claims.",
+      "completeness_score": 1.0,
+      "completeness_reason": "The response includes both required elements\u2014the establishment year (2001) and the founder (Sir Fazle Hasan Abed)\u2014exactly as specified, with no missing or vague information.",
+      "citations_count": 8,
+      "citations_pass": true
+    },
+    {
+      "id": "e2e_03",
+      "question": "What GPA is required for O-Level and A-Level applicants to undergraduate programs at BRAC University?",
+      "actual_output": "For undergraduate admission, O\u2011Level and A\u2011Level applicants must each achieve **a minimum GPA of\u202f2.5**:\n\n- **O\u2011Level:** GPA\u202f\u2265\u202f2.5 calculated from five subjects (using the scale A\u202f=\u202f5, B\u202f=\u202f4, C\u202f=\u202f3, D\u202f=\u202f2, E\u202f=\u202f1; only one E is allowed).  \n- **A\u2011Level:** GPA\u202f\u2265\u202f2.5 calculated from two subjects (same grading scale).  \n\nBoth levels are evaluated separately, and the 2.5 GPA threshold must be met for each.",
+      "expected_output": "A minimum GPA of 2.5 is required in both O-Level and A-Level examinations for undergraduate admission at BRAC University.",
+      "correctness_score": 0.3,
+      "correctness_reason": "The response correctly states the required minimum GPA of 2.5 for both O\u2011Level and A\u2011Level, matching the expected output. However, it adds unsupported details about subject counts, grading scales, and an \"only one E is allowed\" rule, which are not present in the expected answer and cannot be reasonably inferred, constituting hallucinated claims.",
+      "completeness_score": 1.0,
+      "completeness_reason": "The response states the required minimum GPA of 2.5 for both O\u2011Level and A\u2011Level applicants and ties it to undergraduate admission at BRAC University, fully covering the expected element. The extra details about grading scale do not omit or obscure any required information.",
+      "citations_count": 8,
+      "citations_pass": true
+    },
+    {
+      "id": "e2e_04",
+      "question": "Who serves as the Chancellor of BRAC University?",
+      "actual_output": "The Chancellor of BRAC University is **Mohammed\u202fShahabuddin**, who serves in his capacity as the Hon\u2019ble President of the People\u2019s Republic of Bangladesh.",
+      "expected_output": "The President of the People's Republic of Bangladesh, Mohammed Shahabuddin, serves as the Chancellor of BRAC University.",
+      "correctness_score": 1.0,
+      "correctness_reason": "The actual output correctly states that Mohammed Shahabuddin is the Chancellor of BRAC University and that he is the President of the People's Republic of Bangladesh, matching the expected answer without any factual errors or extraneous claims.",
+      "completeness_score": 1.0,
+      "completeness_reason": "The response includes all required elements: it names Mohammed Shahabuddin, identifies him as the President of the People's Republic of Bangladesh, and states his role as Chancellor of BRAC University. No required detail is missing or vague.",
+      "citations_count": 8,
+      "citations_pass": true
+    },
+    {
+      "id": "e2e_05",
+      "question": "What programs does BRAC Business School offer?",
+      "actual_output": "The BRAC Business School (BBS) currently offers three degree programmes:\n\n| Programme | Level | Description |\n|-----------|-------|-------------|\n| **Bachelor of Business Administration (BBA)** | Undergraduate | A four\u2011year undergraduate degree that provides a broad foundation in business and management. |\n| **Master of Business Administration (MBA)** | Graduate | A postgraduate programme designed for recent graduates, mid\u2011level executives, or entrepreneurs, with functional concentrations such as Accounting, Business Analytics, Finance, Human Resources Management, Marketing, Operations & Supply Chain Management, Entrepreneurship, and Information Technology Management. |\n| **Executive Master of Business Administration (EMBA)** | Graduate (executive) | A specialised MBA for senior professionals (corporate executives, civil servants, social entrepreneurs, NGO leaders, military officials, etc.), also offering the same functional concentrations as the MBA. |\n\nThese three programmes\u2014BBA, MBA, and EMBA\u2014are the core academic offerings of the BRAC Business School.",
+      "expected_output": "BRAC Business School offers the Bachelor of Business Administration (BBA), Master of Business Administration (MBA), and Executive Master of Business Administration (EMBA) programs.",
+      "correctness_score": 1.0,
+      "correctness_reason": "The actual output correctly identifies the three programs\u2014BBA, MBA, and EMBA\u2014offered by BRAC Business School, matching the expected answer. The additional descriptions and details do not contradict any core facts, so all claims are accurate and supported.",
+      "completeness_score": 1.0,
+      "completeness_reason": "The response lists all three required programs\u2014BBA, MBA, and EMBA\u2014exactly as the expected output, and even adds a helpful table and descriptions without omitting any required element.",
+      "citations_count": 8,
+      "citations_pass": true
+    }
+  ]
+}

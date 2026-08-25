@@ -1,0 +1,55 @@
+# Environments
+.venv/
+venv/
+env/
+
+# Environment Variables (CRITICAL: DO NOT COMMIT API KEYS)
+.env
+.env.*
+!.env.example
+
+# DeepEval Cache
+.deepeval/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific data (IGNORE HUGE DATA FOLDERS)
+processed_data/
+data/raw/
+data/cleaned/
+.sessions/

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "e2e_01",
+    "question": "Are GED qualifications accepted for undergraduate admission at BRAC University?",
+    "expected_answer": "No, applicants with only Foundation or GED qualifications are not eligible for admission to undergraduate programs at BRAC University.",
+    "expected_sources": ["admission", "undergraduate", "eligibility"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "id": "e2e_02",
+    "question": "In what year was BRAC University established, and who founded it?",
+    "expected_answer": "BRAC University was established in 2001 and was founded by Sir Fazle Hasan Abed.",
+    "expected_sources": ["about", "established", "founder"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "id": "e2e_03",
+    "question": "What GPA is required for O-Level and A-Level applicants to undergraduate programs at BRAC University?",
+    "expected_answer": "A minimum GPA of 2.5 is required in both O-Level and A-Level examinations for undergraduate admission at BRAC University.",
+    "expected_sources": ["gpa", "o-level", "a-level", "admission"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "id": "e2e_04",
+    "question": "Who serves as the Chancellor of BRAC University?",
+    "expected_answer": "The President of the People's Republic of Bangladesh, Mohammed Shahabuddin, serves as the Chancellor of BRAC University.",
+    "expected_sources": ["chancellor", "president", "governance"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "id": "e2e_05",
+    "question": "What programs does BRAC Business School offer?",
+    "expected_answer": "BRAC Business School offers the Bachelor of Business Administration (BBA), Master of Business Administration (MBA), and Executive Master of Business Administration (EMBA) programs.",
+    "expected_sources": ["bbs", "bba", "mba", "emba", "programs"],
+    "expected_behavior": "answer_with_citations"
+  }
+]

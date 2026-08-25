@@ -1,0 +1,27 @@
+[
+  {
+    "question": "In what year was BRAC University established, and who founded it?",
+    "context": ["BRAC University was established in 2001. Sir Fazle Hasan Abed KCMG founded the university."],
+    "reference_answer": "BRAC University was established in 2001 and founded by Sir Fazle Hasan Abed."
+  },
+  {
+    "question": "How many schools and departments does BRAC University currently have?",
+    "context": ["BRAC University currently features 10 schools and 8 departments, covering a wide range of subjects."],
+    "reference_answer": "BRAC University currently has 10 schools and 8 departments."
+  },
+  {
+    "question": "Are GED qualifications accepted for undergraduate admission?",
+    "context": ["Applicants with only Foundation or GED qualifications are not eligible for admission to undergraduate programs."],
+    "reference_answer": "No, applicants with only Foundation or GED qualifications are not eligible for admission to undergraduate programs."
+  },
+  {
+    "question": "Do international applicants have an application deadline?",
+    "context": ["BRAC University offers three semesters per year (Spring, Summer, and Fall). International students can apply at any time during the year with no application deadline."],
+    "reference_answer": "No, international students can apply at any time during the year as there is no application deadline."
+  },
+  {
+    "question": "What are OCSAR's office hours?",
+    "context": ["The Office of Career Services and Alumni Relations (OCSAR) operates from 9:00 am to 5:00 pm, Sunday through Thursday, except on national holidays."],
+    "reference_answer": "OCSAR's office hours are 9:00 am to 5:00 pm, Sunday through Thursday, except holidays."
+  }
+]
