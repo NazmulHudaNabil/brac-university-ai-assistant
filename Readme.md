@@ -2,6 +2,14 @@
 
 A production-grade, agentic RAG system built with **LangGraph**, **Portkey LLM Gateway**, and **Jina Embeddings**. The assistant answers questions about BRAC University using grounded, citation-backed retrieval from official university documents, with semantic reranking, custom LLM guardrails, and full conversation memory.
 
+---
+
+## 🎥 Project Demo
+
+[▶️ Watch the Full Project Demo](https://www.youtube.com/watch?v=eJw-dA2ZP5Q)
+
+---
+
 ## Key Features
 
 - **Agentic Intelligence**: LangGraph for cyclic reasoning, multi-step planning, and conversation memory.
