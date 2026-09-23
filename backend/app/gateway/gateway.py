@@ -47,7 +47,8 @@ def get_langchain_llm(feature: str = "rag") -> ChatOpenAI:
     logfire.info("Creating Portkey LLM client", feature=feature, model=settings.PRIMARY_MODEL)
 
     return ChatOpenAI(
-        api_key=settings.PORTKEY_API_KEY,
+        openai_api_key=settings.PORTKEY_API_KEY or "dummy_key",
+        api_key=settings.PORTKEY_API_KEY or "dummy_key",
         base_url=PORTKEY_GATEWAY_URL,
         model=f"@{settings.GROQ_SLUG}/{settings.PRIMARY_MODEL}",
         temperature=0,

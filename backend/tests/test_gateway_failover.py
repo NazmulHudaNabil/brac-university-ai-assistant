@@ -43,8 +43,7 @@ def test_langchain_llm_factory():
 def test_cache_extraction():
     print("\n--- Test 3: Cache Status Extraction ---")
     class MockResponse:
-        class _response:
-            headers = {"x-portkey-cache-status": "HIT"}
+        headers = {"x-portkey-cache-status": "HIT"}
     
     mock_hit = MockResponse()
     status_hit = extract_cache_status(mock_hit)
