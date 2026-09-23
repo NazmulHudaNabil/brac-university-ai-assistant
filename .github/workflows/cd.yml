@@ -19,6 +19,7 @@ jobs:
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
           heroku container:login
+          heroku stack:set container -a $HEROKU_APP_NAME
           cd backend
           heroku container:push web -a $HEROKU_APP_NAME
           heroku container:release web -a $HEROKU_APP_NAME
