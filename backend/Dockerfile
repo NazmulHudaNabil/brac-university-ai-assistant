@@ -25,7 +25,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project files
 COPY app/ ./app/
 COPY data/golden/ ./data/golden/
-COPY streamlit_app.py .
 
 # Create sessions directory and change ownership for non-root execution
 RUN mkdir -p .sessions && \
@@ -35,10 +34,8 @@ RUN mkdir -p .sessions && \
 # Run as non-root user for security (ECS Fargate best practice)
 USER appuser
 
-# Expose ports for FastAPI (8000) and Streamlit (8501)
-EXPOSE 8000 8501
+# Expose port for FastAPI (8000)
+EXPOSE 8000
 
 # Default command (FastAPI Backend)
-# Can be overridden in docker-compose or ECS task definition to run Streamlit:
-# CMD ["streamlit", "run", "streamlit_app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

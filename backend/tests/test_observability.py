@@ -9,7 +9,6 @@ Verifies that:
 
 import asyncio
 import uuid
-import logfire
 from langsmith import Client as LangSmithClient
 from app.config import settings
 from app.main import app, chat_endpoint, ChatRequest

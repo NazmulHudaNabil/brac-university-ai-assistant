@@ -3,6 +3,7 @@ import json
 import uuid
 import logfire
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional, Dict
 from langsmith import traceable
@@ -11,6 +12,15 @@ from app.guardrails.guard import check_guardrails
 from app.observability import setup_observability
 
 app = FastAPI(title="BRAC University AI Assistant", version="0.1.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 setup_observability(app)
 
 class ChatRequest(BaseModel):
@@ -120,6 +130,10 @@ async def chat_endpoint(request: ChatRequest):
         except Exception as e:
             logfire.error("Error processing chat request", error=str(e))
             raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
 
 if __name__ == "__main__":
     import uvicorn

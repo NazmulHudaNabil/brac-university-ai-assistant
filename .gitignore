@@ -53,3 +53,5 @@ processed_data/
 data/raw/
 data/cleaned/
 .sessions/
+backend/data/raw/
+backend/data/cleaned/

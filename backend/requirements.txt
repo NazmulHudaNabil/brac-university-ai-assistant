@@ -32,3 +32,8 @@ python-pptx
 python-dotenv
 requests
 httpx
+
+# Testing
+pytest
+pytest-asyncio
+

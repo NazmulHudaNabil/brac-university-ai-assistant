@@ -13,7 +13,7 @@ A production-grade, agentic RAG system built with **LangGraph**, **Portkey LLM G
 - **Observability**: Full trace nesting with **Pydantic Logfire** and **LangSmith** across every agent node.
 - **Evaluation Suite**: DeepEval-powered evaluation across component, pipeline, and application levels.
 - **Golden Dataset**: Dedicated retrieval, generation, and end-to-end evaluation datasets.
-- **Production Ready**: Fully Dockerized architecture supporting sidecar deployment to AWS ECS Fargate and Koyeb.
+- **Production Ready**: Fully Dockerized architecture supporting sidecar deployment to AWS ECS Fargate and Render with streamlits.
 
 ---
 
