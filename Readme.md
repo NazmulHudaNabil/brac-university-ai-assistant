@@ -13,7 +13,7 @@ A production-grade, agentic RAG system built with **LangGraph**, **Portkey LLM G
 - **Observability**: Full trace nesting with **Pydantic Logfire** and **LangSmith** across every agent node.
 - **Evaluation Suite**: DeepEval-powered evaluation across component, pipeline, and application levels.
 - **Golden Dataset**: Dedicated retrieval, generation, and end-to-end evaluation datasets.
-- **Production Ready**: Fully Dockerized architecture supporting sidecar deployment to AWS ECS Fargate and Render with streamlits.
+- **Production Ready**: Fully Dockerized architecture supporting sidecar deployment to AWS ECS Fargate and Heroku with Next.js.
 
 ---
 
@@ -52,8 +52,8 @@ graph TD
 │   ├── services/
 │   │   └── retrieval/   # Jina embeddings + Qdrant search + Jina reranking
 │   ├── config.py        # Centralized environment variable management
-│   ├── ui.py            # Streamlit Chat UI
 │   └── main.py          # FastAPI entrypoint — guardrails gate + /chat endpoint
+├── frontend/            # Next.js Chat UI
 ├── evals/               # DeepEval evaluation suite (component/pipeline/application)
 ├── data/
 │   ├── raw/scraped/     # Raw scraped BRAC University documents
@@ -155,22 +155,22 @@ This project implements an advanced Retrieval-Augmented Generation (RAG) pipelin
 
 ## Deployment
 
-This application is fully Dockerized and supports the **Sidecar Pattern**, allowing you to run both the FastAPI backend and the Streamlit frontend seamlessly side-by-side.
+This application is fully Dockerized and supports the **Sidecar Pattern**, allowing you to run both the FastAPI backend and the Next.js frontend seamlessly side-by-side.
 
-### Deploying for Free (Render + Streamlit Cloud)
-If you want to host this project completely for free, you can split the frontend and backend:
-1. **Backend (Render):** Go to [Render.com](https://render.com/), create a new **Web Service**, and connect this GitHub repo. Choose **Docker** as the environment. Render will automatically build the `Dockerfile` and host your FastAPI server.
-2. **Frontend (Streamlit Cloud):** Go to [Streamlit Community Cloud](https://share.streamlit.io/), create a new app, and select this repository. Set the main file path to `streamlit_app.py`. In the advanced settings, add an environment variable `BACKEND_API_URL` pointing to your new Render URL (e.g., `https://your-app.onrender.com/chat`).
+### Deploying to Heroku and Vercel
+You can split the frontend and backend for easy deployment:
+1. **Backend (Heroku):** Push to the `main` branch, and the configured GitHub Actions will automatically build the backend Docker container and deploy it to your Heroku application.
+2. **Frontend (Vercel):** Connect your GitHub repository to [Vercel](https://vercel.com/). Vercel will automatically detect the Next.js project and deploy the frontend upon every commit. Add an environment variable `NEXT_PUBLIC_API_URL` pointing to your new Heroku URL.
 
 ### Deploying to AWS ECS Fargate
 For enterprise scalability, the `docker-compose.yml` and `Dockerfile` are production-ready for Amazon ECS Fargate.
 - **Backend Container:** Runs FastAPI on port 8000.
-- **Frontend Container:** Runs Streamlit on port 8501 (set `BACKEND_API_URL` to `http://localhost:8000/chat`).
+- **Frontend Container:** Runs Next.js on port 3000 (set `NEXT_PUBLIC_API_URL` to `http://localhost:8000`).
 
 **AWS Configuration Tips:**
 - **Architecture:** If you build your Docker image locally on an M1/M2/M3 Mac, be sure to set the ECS Task Definition Operating System/Architecture to **Linux/ARM64** (or build with `docker buildx build --platform linux/amd64`).
-- **Commands:** In the Task Definition, override the frontend command to `streamlit,run,streamlit_app.py,--server.port,8501,--server.address,0.0.0.0`.
-- **Security Group:** Ensure TCP ports `8000` and `8501` are open to the internet (`0.0.0.0/0`).
+- **Commands:** In the Task Definition, override the frontend command to `npm,start`.
+- **Security Group:** Ensure TCP ports `8000` and `3000` are open to the internet (`0.0.0.0/0`).
 
 ---
 
