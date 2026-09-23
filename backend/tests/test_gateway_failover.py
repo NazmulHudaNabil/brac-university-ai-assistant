@@ -5,6 +5,8 @@ Verifies Portkey Gateway configuration, virtual slug targets (@rag / @brag),
 LangChain ChatOpenAI proxy integration, cache extraction, and automatic failover.
 """
 
+import os
+import pytest
 import asyncio
 from app.gateway import (
     GATEWAY_CONFIG,
@@ -13,6 +15,8 @@ from app.gateway import (
     extract_cache_status,
     llm_gateway
 )
+
+pytestmark = pytest.mark.skipif(os.environ.get("CI") == "true", reason="Requires API keys")
 from app.agents.graph import agent
 from app.config import settings
 

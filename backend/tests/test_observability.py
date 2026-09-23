@@ -7,9 +7,13 @@ Verifies that:
 3. LangSmith records the trace tagged with request_id and project metadata.
 """
 
+import os
+import pytest
 import asyncio
 import uuid
 from langsmith import Client as LangSmithClient
+
+pytestmark = pytest.mark.skipif(os.environ.get("CI") == "true", reason="Requires API keys")
 from app.config import settings
 from app.main import app, chat_endpoint, ChatRequest
 
