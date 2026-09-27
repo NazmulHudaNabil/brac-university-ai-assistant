@@ -108,20 +108,20 @@ export default function ChatPage() {
   ];
 
   return (
-    <div className="flex flex-col h-[100dvh] sm:p-6 lg:p-10 bg-slate-100 text-slate-900 font-sans items-center justify-center">
-      <div className="flex flex-col w-full max-w-3xl h-full bg-white sm:shadow-2xl sm:rounded-[2rem] sm:border border-slate-200 overflow-hidden relative">
+    <div className="flex flex-col h-[100dvh] md:p-6 lg:p-8 bg-background text-foreground font-sans items-center justify-center">
+      <div className="flex flex-col w-full max-w-5xl h-full bg-card md:shadow-2xl md:rounded-3xl border border-border overflow-hidden relative">
         {/* Header */}
-        <header className="flex items-center justify-between px-6 py-4 bg-blue-600 shadow-sm z-20">
+        <header className="flex items-center justify-between px-6 py-4 bg-primary shadow-sm z-20">
           <div className="flex items-center gap-3">
-            <div className="relative bg-white p-2 rounded-full shadow-sm">
-              <Bot className="w-5 h-5 text-blue-600" />
-              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
+            <div className="relative bg-background p-2 rounded-full shadow-sm">
+              <Bot className="w-5 h-5 text-primary" />
+              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-background rounded-full"></div>
             </div>
             <div>
-              <h1 className="text-[17px] font-semibold text-white tracking-wide">
+              <h1 className="text-[17px] font-semibold text-primary-foreground tracking-wide">
                 BRAC University Bot
               </h1>
-              <p className="text-[12px] text-blue-100 font-medium">AI Assistant</p>
+              <p className="text-[12px] text-primary-foreground/80 font-medium">AI Assistant</p>
             </div>
           </div>
           
@@ -129,7 +129,7 @@ export default function ChatPage() {
           <div className="relative">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-white hover:bg-blue-700 rounded-full transition-colors"
+              className="p-2 text-primary-foreground hover:bg-primary-dark rounded-full transition-colors"
             >
               <MoreVertical className="w-5 h-5" />
             </button>
@@ -137,12 +137,12 @@ export default function ChatPage() {
             {isMenuOpen && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setIsMenuOpen(false)}></div>
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden z-20 py-1">
+                <div className="absolute right-0 mt-2 w-48 bg-popover rounded-xl shadow-xl border border-border overflow-hidden z-20 py-1">
                   <button 
                     onClick={handleNewSession}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[15px] text-slate-700 hover:bg-slate-50 transition-colors"
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[15px] text-popover-foreground hover:bg-secondary transition-colors"
                   >
-                    <PlusCircle className="w-4 h-4 text-blue-600" />
+                    <PlusCircle className="w-4 h-4 text-primary" />
                     <span className="font-medium">New Session</span>
                   </button>
                 </div>
@@ -152,11 +152,11 @@ export default function ChatPage() {
         </header>
 
         {/* Chat Area */}
-        <div className="flex-1 overflow-y-auto px-4 sm:px-8 pt-6 pb-4 bg-white" ref={scrollRef}>
+        <div className="flex-1 overflow-y-auto px-4 md:px-8 pt-6 pb-4 bg-card" ref={scrollRef}>
           <div className="flex flex-col gap-6">
             {messages.map((msg, idx) => (
               <div key={idx} className="flex flex-col">
-                <span className={`text-[11px] font-medium text-slate-400 mb-1.5 ${msg.role === "user" ? "text-right mr-1" : "text-left ml-11"}`}>
+                <span suppressHydrationWarning className={`text-[11px] font-medium text-muted-foreground mb-1.5 ${msg.role === "user" ? "text-right mr-1" : "text-left ml-11"}`}>
                   {msg.timestamp}
                 </span>
                 
@@ -164,18 +164,18 @@ export default function ChatPage() {
                   
                   {/* Assistant Avatar */}
                   {msg.role === "assistant" && (
-                    <div className="w-8 h-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Bot className="w-4 h-4 text-blue-600" />
+                    <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Bot className="w-4 h-4 text-primary" />
                     </div>
                   )}
 
                   {/* Message Bubble */}
-                  <div className="flex flex-col gap-2 max-w-[90%] sm:max-w-[85%]">
+                  <div className="flex flex-col gap-2 max-w-[90%] md:max-w-[85%]">
                     <div 
                       className={`px-5 py-3.5 text-[15px] leading-relaxed shadow-sm ${
                         msg.role === "user" 
-                          ? "bg-blue-600 text-white rounded-2xl rounded-tr-sm" 
-                          : "bg-slate-100 text-slate-900 rounded-2xl rounded-tl-sm"
+                          ? "bg-primary text-primary-foreground rounded-2xl rounded-tr-sm" 
+                          : "bg-secondary text-secondary-foreground rounded-2xl rounded-tl-sm"
                       }`}
                     >
                       {msg.role === "assistant" ? (
@@ -183,15 +183,15 @@ export default function ChatPage() {
                           remarkPlugins={[remarkGfm]}
                           components={{
                             p: ({node, ...props}) => <p className="mb-3 last:mb-0" {...props} />,
-                            strong: ({node, ...props}) => <strong className="font-semibold text-slate-900" {...props} />,
+                            strong: ({node, ...props}) => <strong className="font-semibold text-foreground" {...props} />,
                             ul: ({node, ...props}) => <ul className="list-disc pl-5 mb-3 space-y-1" {...props} />,
                             ol: ({node, ...props}) => <ol className="list-decimal pl-5 mb-3 space-y-1" {...props} />,
                             li: ({node, ...props}) => <li className="" {...props} />,
-                            a: ({node, ...props}) => <a className="text-blue-600 underline underline-offset-2 hover:text-blue-800 transition-colors font-medium" {...props} />,
+                            a: ({node, ...props}) => <a className="text-accent underline underline-offset-2 hover:brightness-110 transition-colors font-medium" {...props} />,
                             h1: ({node, ...props}) => <h1 className="text-lg font-bold mb-2 mt-4" {...props} />,
                             h2: ({node, ...props}) => <h2 className="text-base font-bold mb-2 mt-3" {...props} />,
                             h3: ({node, ...props}) => <h3 className="text-sm font-bold mb-1 mt-2" {...props} />,
-                            hr: ({node, ...props}) => <hr className="my-4 border-slate-300" {...props} />
+                            hr: ({node, ...props}) => <hr className="my-4 border-border" {...props} />
                           }}
                         >
                           {msg.content}
@@ -208,7 +208,7 @@ export default function ChatPage() {
                           <button
                             key={qIdx}
                             onClick={() => sendSpecificMessage(q.label)}
-                            className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-[14px] font-medium text-blue-600 hover:bg-blue-50 transition-colors shadow-sm"
+                            className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full text-[14px] font-medium text-primary hover:bg-secondary transition-colors shadow-sm"
                           >
                             {q.icon}
                             {q.label}
@@ -220,19 +220,19 @@ export default function ChatPage() {
                     {/* Citations block */}
                     {msg.sources && msg.sources.length > 0 && (
                       <div className="flex flex-col gap-2 mt-1">
-                        <div className="flex flex-col rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                        <div className="flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-sm">
                           {msg.sources.map((source, sIdx) => (
                             <a 
                               key={sIdx} 
                               href={source.url || "#"} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className={`flex items-center gap-2.5 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 transition-colors ${
-                                sIdx !== msg.sources!.length - 1 ? "border-b border-slate-100" : ""
+                              className={`flex items-center gap-2.5 px-4 py-3 text-sm text-muted-foreground hover:bg-secondary transition-colors ${
+                                sIdx !== msg.sources!.length - 1 ? "border-b border-border" : ""
                               }`}
                               title={source.snippet}
                             >
-                              <BookOpen className="w-4 h-4 flex-shrink-0 text-slate-400" />
+                              <BookOpen className="w-4 h-4 flex-shrink-0 text-muted-foreground/70" />
                               <span className="font-medium truncate">{source.title || source.document_id || `Source ${sIdx + 1}`}</span>
                             </a>
                           ))}
@@ -246,16 +246,16 @@ export default function ChatPage() {
             
             {isLoading && (
               <div className="flex flex-col">
-                <span className="text-[11px] font-medium text-slate-400 mb-1.5 text-left ml-11">
+                <span suppressHydrationWarning className="text-[11px] font-medium text-muted-foreground mb-1.5 text-left ml-11">
                   {getCurrentTime()}
                 </span>
                 <div className="flex gap-3 items-start flex-row">
-                  <div className="w-8 h-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Bot className="w-4 h-4 text-blue-600" />
+                  <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Bot className="w-4 h-4 text-primary" />
                   </div>
-                  <div className="px-5 py-3.5 bg-slate-100 rounded-2xl rounded-tl-sm shadow-sm flex items-center gap-3">
-                    <Loader2 className="w-4 h-4 animate-spin text-slate-500" />
-                    <span className="text-slate-600 text-[15px]">Thinking...</span>
+                  <div className="px-5 py-3.5 bg-secondary rounded-2xl rounded-tl-sm shadow-sm flex items-center gap-3">
+                    <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
+                    <span className="text-secondary-foreground text-[15px]">Thinking...</span>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function ChatPage() {
         </div>
 
         {/* Input Area */}
-        <div className="bg-white border-t border-slate-100 pb-safe">
+        <div className="bg-card border-t border-border pb-safe">
           <div className="flex items-center px-4 py-3 gap-2">
             <input
               type="text"
@@ -272,13 +272,13 @@ export default function ChatPage() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Send a message..."
-              className="flex-1 bg-transparent border-none outline-none text-slate-900 placeholder:text-slate-400 text-[15px] px-2"
+              className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground text-[15px] px-2"
               disabled={isLoading}
             />
             <button 
               onClick={sendMessage} 
               disabled={!input.trim() || isLoading}
-              className="p-2.5 rounded-full text-slate-400 hover:text-blue-600 transition-colors disabled:opacity-50"
+              className="p-2.5 rounded-full text-muted-foreground hover:text-primary transition-colors disabled:opacity-50"
             >
               <Send className="w-5 h-5" />
             </button>
